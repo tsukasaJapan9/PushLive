@@ -2,29 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MidiJack;
+using System;
 
-namespace MidiJack
+public class MidiController : MonoBehaviour
 {
-    public class Midicontroller : MonoBehaviour
-    {
-        private int pad1 = 36;
-        private int padNum = 16;
-        // Start is called before the first frame update
-        void Start()
-        {
-            Debug.Log("ok");
-        }
+    private int pad1 = 36;
+    private int padNum = 16;
+    public bool[] padStatus = new bool[16];
 
-        // Update is called once per frame
-        void Update()
+    void Start()
+    {
+        Debug.Log("ok");
+    }
+
+    public void GetPadStatus(bool[] status)
+    {
+        Array.Copy(this.padStatus, status, this.padStatus.Length);
+    }
+
+    void Update()
+    {
+        for (int i = this.pad1; i < (this.pad1 + this.padNum); i++)
         {
-            for (int i = this.pad1; i < (this.pad1 + this.padNum); i++)
+            bool value = MidiMaster.GetKeyDown(MidiChannel.Ch10, i);
+            this.padStatus[i - this.pad1] = value;
+            if (value)
             {
-                bool value = MidiMaster.GetKeyDown(MidiChannel.Ch10, i);
-                if (value)
-                {
-                    Debug.Log("note:" + i.ToString());
-                }
+                Debug.Log("note:" + i.ToString());
             }
         }
     }
