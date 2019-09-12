@@ -15,10 +15,12 @@ public class MidiController : MonoBehaviour
         Debug.Log("ok");
     }
 
+    /*
     public void GetPadStatus(bool[] status)
     {
         Array.Copy(this.padStatus, status, this.padStatus.Length);
     }
+    */
 
     void Update()
     {
@@ -26,10 +28,12 @@ public class MidiController : MonoBehaviour
         {
             bool value = MidiMaster.GetKeyDown(MidiChannel.Ch10, i);
             this.padStatus[i - this.pad1] = value;
+            /*
             if (value)
             {
                 Debug.Log("note:" + i.ToString());
             }
+            */
         }
     }
 }

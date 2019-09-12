@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,12 +12,21 @@ public class CubeController : MonoBehaviour
     void Start()
     {
         this.midiconObj = GameObject.Find("MidiController");
-        midicon = this.midicon.GetComponent<MidiController>();
+        midicon = this.midiconObj.GetComponent<MidiController>();
+    }
+
+    void PrintArray(bool[] ary)
+    {
+        foreach (var i in ary)
+        {
+            Debug.Log(i);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(midicon.padStatus);
+        //Debug.Log(midicon.padStatus);
+        PrintArray(midicon.padStatus);
     }
 }
