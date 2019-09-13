@@ -31,27 +31,18 @@ public class MidiController : MonoBehaviour
             int index = i - this.pad0;
             this.padStatus[index] = value;
 
-            if (index == 0)
+            //Debug.Log(value);
+            GameObject cube = GameObject.FindGameObjectWithTag("cube" + index);
+            if (value > 0.5)
             {
-                Debug.Log(value);
-                GameObject cube = GameObject.FindGameObjectWithTag("cube" + index);
-                if (value > 0.5)
-                {
-                    cube.GetComponent<CubeController>().SetYPos(1);
+                cube.GetComponent<CubeController>().SetYPos(1);
 
-                }
-                else
-                {
-                    cube.GetComponent<CubeController>().SetYPos(0);
-
-                }
             }
-            /*
-            if (value)
+            else
             {
-                Debug.Log("note:" + i.ToString());
+                cube.GetComponent<CubeController>().SetYPos(0);
+
             }
-            */
         }
     }
 }
