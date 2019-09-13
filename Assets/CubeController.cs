@@ -5,28 +5,23 @@ using UnityEngine;
 
 public class CubeController : MonoBehaviour
 {
-    private GameObject midiconObj;
-    private MidiController midicon;
+    private int yPos = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.midiconObj = GameObject.Find("MidiController");
-        midicon = this.midiconObj.GetComponent<MidiController>();
     }
 
-    void PrintArray(bool[] ary)
+    public void SetYPos(int p)
     {
-        foreach (var i in ary)
-        {
-            Debug.Log(i);
-        }
+        this.yPos = p;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(midicon.padStatus);
-        PrintArray(midicon.padStatus);
+        Vector3 pos = gameObject.transform.position;
+        pos.y = this.yPos;
+        gameObject.transform.position = pos;
     }
 }
