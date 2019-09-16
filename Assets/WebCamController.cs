@@ -17,9 +17,11 @@ public class WebCamController : MonoBehaviour
         {
             Debug.Log("WebCamDevice " + device.name);
         }
+        /*
         webcamTexture = new WebCamTexture(this.width, this.height, this.fps);
         GetComponent<Renderer>().material.mainTexture = webcamTexture;
         webcamTexture.Play();
+        */
     }
 
     // Update is called once per frame
