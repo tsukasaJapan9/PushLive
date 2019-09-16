@@ -35,12 +35,12 @@ public class MidiController : MonoBehaviour
             GameObject cube = GameObject.FindGameObjectWithTag("cube" + index);
             if (value > 0.5)
             {
-                cube.GetComponent<CubeController>().SetYPos(1);
+                //cube.GetComponent<CubeController>().SetYPos(1);
 
             }
             else
             {
-                cube.GetComponent<CubeController>().SetYPos(0);
+                //cube.GetComponent<CubeController>().SetYPos(0);
 
             }
         }
