@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ImageProc.unity
+    guid: 379aa1c115ebd46d5afdbc49316e4e3c
   m_configObjects: {}

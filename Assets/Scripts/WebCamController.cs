@@ -6,6 +6,9 @@ public class WebCamController : MonoBehaviour
 {
     private int width = 1920;
     private int height = 1080;
+    // private int width = 320;
+    // private int height = 240;
+
     private int fps = 30;
     private WebCamTexture webcamTexture;
 
@@ -17,11 +20,9 @@ public class WebCamController : MonoBehaviour
         {
             Debug.Log("WebCamDevice " + device.name);
         }
-        /*
-        webcamTexture = new WebCamTexture(this.width, this.height, this.fps);
-        GetComponent<Renderer>().material.mainTexture = webcamTexture;
-        webcamTexture.Play();
-        */
+        // webcamTexture = new WebCamTexture(this.width, this.height, this.fps);
+        // GetComponent<Renderer>().material.mainTexture = webcamTexture;
+        // webcamTexture.Play();
     }
 
     // Update is called once per frame
