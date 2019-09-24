@@ -7,7 +7,7 @@ public class EffectManager : MonoBehaviour
     public RadiationBlur radiationBlur;
 
     KeyCode radiationBlurKey = KeyCode.F1;
-    public float maxRadiationBlurPower = 100;
+    public float maxRadiationBlurPower = 150;
     public float effectTime = 0.25f;
 
     void Reset() 
@@ -28,6 +28,7 @@ public class EffectManager : MonoBehaviour
 
     IEnumerator StartRadiationBlur() 
     {
+        Debug.Log("test");
         float duration = effectTime;
         while (duration > 0f) 
         {

@@ -46,7 +46,7 @@
                 float2 dir = _BlurCenter - i.uv;
                 float dist = length(dir);
                 dir = normalize(dir) * _MainTex_TexelSize.xy;
-                dir *= _BlurPower * dist;
+                dir *= _BlurPower * dist * 2;
 
                 float param = 0.19f;
                 float4 col = tex2D(_MainTex, i.uv) * param;

@@ -8,7 +8,7 @@ public class RadiationBlur : MonoBehaviour
     
     public Vector2 center = new Vector2(0.5f, 0.5f);
 
-    [Range(0, 100)]
+    [Range(0, 1500)]
     public float power = 0f;
 
     [SerializeField]

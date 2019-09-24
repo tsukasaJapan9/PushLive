@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class WebCamController : MonoBehaviour
 {
-    private int width = 1920;
-    private int height = 1080;
-    // private int width = 320;
-    // private int height = 240;
+    private int width = 1280;
+    private int height = 720;
 
     private int fps = 30;
     private WebCamTexture webcamTexture;
