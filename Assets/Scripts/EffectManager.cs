@@ -5,6 +5,8 @@ using UnityEngine;
 public class EffectManager : MonoBehaviour
 {
     public RadiationBlur radiationBlur;
+    GameObject midiControllerObj;
+    MidiController midiController;
 
     KeyCode radiationBlurKey = KeyCode.F1;
     public float maxRadiationBlurPower = 150;
@@ -17,6 +19,9 @@ public class EffectManager : MonoBehaviour
 
     void Start()
     {
+        this.midiControllerObj = GameObject.Find("MidiController");
+        this.midiController = this.midiControllerObj.GetComponent<MidiController>();
+
         Reset(); 
     }
 
@@ -24,6 +29,7 @@ public class EffectManager : MonoBehaviour
     void Update()
     {
         KeyCheck();
+        MidiCheck();
     }
 
     IEnumerator StartRadiationBlur() 
@@ -44,6 +50,13 @@ public class EffectManager : MonoBehaviour
     void KeyCheck() 
     {
         if (Input.GetKeyDown(radiationBlurKey)) {
+            StartCoroutine(StartRadiationBlur());
+        }
+    }
+
+    void MidiCheck()
+    {
+        if (this.midiController.padStatus[6] == true) {
             StartCoroutine(StartRadiationBlur());
         }
     }

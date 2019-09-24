@@ -7,7 +7,7 @@ public class WebCamController : MonoBehaviour
     private int width = 1280;
     private int height = 720;
 
-    private int fps = 30;
+    private int fps = 60;
     private WebCamTexture webcamTexture;
 
     void Start()
