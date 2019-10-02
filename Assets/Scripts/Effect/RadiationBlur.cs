@@ -5,10 +5,10 @@ using System.Collections;
 public class RadiationBlur : MonoBehaviour
 {
     const string SHADER_NAME = "Custom/RadiationBlur";
-    
+
     public Vector2 center = new Vector2(0.5f, 0.5f);
 
-    [Range(0, 1500)]
+    [Range(0, 150)]
     public float power = 0f;
 
     [SerializeField]
@@ -30,7 +30,6 @@ public class RadiationBlur : MonoBehaviour
         {
             if (_material == null) {
                 _material = new Material(shader);
-                //_material.hideFlags = HideFlags.DontSave;
             }
             return _material;
         }
