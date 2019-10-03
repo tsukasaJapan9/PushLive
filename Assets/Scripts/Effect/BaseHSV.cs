@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class Base : MonoBehaviour
+public class BaseHSV : MonoBehaviour
 {
-    const string SHADER_NAME = "Custom/Base";
+    const string SHADER_NAME = "Custom/BaseHSV";
 
     [Range(0, 360)]
     public float hue = 0;

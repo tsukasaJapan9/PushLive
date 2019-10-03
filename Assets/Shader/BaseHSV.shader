@@ -1,4 +1,4 @@
-﻿Shader "Custom/Base"
+﻿Shader "Custom/BaseHSV"
 {
     Properties
     {

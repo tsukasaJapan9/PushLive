@@ -473,6 +473,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e969e51a0fd0e4a3e93b6fd239324ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hue: 147
+  sat: 1
+  val: 1
   _shader: {fileID: 4800000, guid: 5a3dba001d0a0417e9a0291b2275dd67, type: 3}
 --- !u!1 &1995835280
 GameObject:
